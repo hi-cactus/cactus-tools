@@ -4,19 +4,20 @@ import getType from "./type";
 /**
  * 递归获取 Object value
  * @param {Object} params
- * @param {Number} key 初始key 值 默认为0
+ * @param {Number} index 初始值 默认为0
  * @param {(String|Number|Boolean)[]}} value 一般传入空数组
  */
-function vals(params, key, value) {
-  const keys = Object.keys(params);
+function vals(params: [{ [key: string]: any }], index: number, value: any[]) {
+  const keys: string[] = Object.keys(params);
   const len = keys.length;
-  if (key > len) return;
-  const val = params[keys[key]];
+  if (index > len) return;
+  const key:string = keys[index];
+  const val = params[key];
   if (getType(val) === "object" || getType(val) === "array") {
     vals(val, 0, value);
   } else {
     value.push(val);
-    vals(params, key + 1, value);
+    vals(params, index + 1, value);
   }
 }
 /**
