@@ -8,7 +8,8 @@ type TYPE_MSG =
   | "function"
   | "object"
   | "set"
-  | "map";
+  | "map"
+  | "symbol";
 
 /**
  * Get the type of value

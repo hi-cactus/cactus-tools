@@ -1,0 +1,53 @@
+import getType from "type";
+
+/**
+ * 获取所有value 值
+ *
+ * @export
+ * @param {(any[] | object)} value
+ * @returns {string[]}
+ *
+ * @example
+ *
+ * valuesDeep({a: 1, b: [{c: 1}]})
+ * // => [1, 2]
+ *
+ */
+export default function valuesDeep(value: any[] | object): any[] {
+  const val: any[] = [];
+  vals(value, 0, val);
+  return val;
+}
+
+/**
+ * 递归获取 Object value
+ *
+ * @param {({ [key: string]: any } | { [key: string]: any })} parent
+ * @param {number} index
+ * @param {any[]} value
+ * @returns {void}
+ *
+ * @example
+ *
+ * vals({ a: 1, 1: 2, b: [{c: 3}] }, 0, []);
+ * // => [1, 2, 3]
+ *
+ */
+function vals(
+  parent: { [key: string]: any } | { [key: string]: any },
+  index: number,
+  value: any[]
+): void {
+  const keys = Object.keys(parent);
+  const len = keys.length;
+  if (index > len) return;
+  const key = keys[index];
+  const val = parent[key];
+
+  if (getType(val) === "object" || getType(val) === "array")
+    vals(val, 0, value);
+  else {
+    value.push(val);
+    vals(parent, index + 1, value);
+  }
+}
