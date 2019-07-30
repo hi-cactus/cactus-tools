@@ -27,7 +27,7 @@ function vals(
 
   if (parent.hasOwnProperty("key")) {
     Object.assign({}, value, {
-      [key]: parent[key]
+      // [key]: parent[key]
     });
   } else vals(parent, props, index + 1, value);
 }

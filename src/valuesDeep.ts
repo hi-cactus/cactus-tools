@@ -1,4 +1,4 @@
-import getType from "type";
+import getType from './type';
 
 /**
  * 获取所有value 值
@@ -40,13 +40,14 @@ function vals(
 ): void {
   const keys = Object.keys(parent);
   const len = keys.length;
-  if (index > len) return;
+  if (index > len - 1) return;
   const key = keys[index];
   const val = parent[key];
 
-  if (getType(val) === "object" || getType(val) === "array")
+  if (getType(val) === 'object' || getType(val) === 'array') {
     vals(val, 0, value);
-  else {
+    vals(parent, index + 1, value);
+  } else {
     value.push(val);
     vals(parent, index + 1, value);
   }

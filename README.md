@@ -8,12 +8,10 @@ $ npm install utility
 
 #### Technical Documentation
 
-- [utility](#utility)
-      - [Technical Documentation](#technical-documentation)
-    - [Installing](#installing)
-    - [Usage](#usage)
-    - [Version](#version)
-    - [License](#license)
+- [Installing](#installing)
+- [Usage](#usage)
+- [Version](#version)
+- [License](#license)
 
 ### Installing
 

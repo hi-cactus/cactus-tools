@@ -1,15 +1,15 @@
 type TYPE_MSG =
-  | "string"
-  | "number"
-  | "boolean"
-  | "array"
-  | "null"
-  | "undefined"
-  | "function"
-  | "object"
-  | "set"
-  | "map"
-  | "symbol";
+  | 'string'
+  | 'number'
+  | 'boolean'
+  | 'array'
+  | 'null'
+  | 'undefined'
+  | 'function'
+  | 'object'
+  | 'set'
+  | 'map'
+  | 'symbol';
 
 /**
  * Get the type of value
@@ -29,9 +29,9 @@ type TYPE_MSG =
  *
  *
  */
-export default function getType(value: any): TYPE_MSG {
+export default function getType(value: any): string {
   return Object.prototype.toString
     .call(value)
-    .replace(/(\[)(\w* )(\w*)(\])/, "$3")
+    .replace(/(\[)(\w* )(\w*)(\])/, '$3')
     .toLowerCase();
 }
