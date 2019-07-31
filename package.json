@@ -1,6 +1,6 @@
 {
   "name": "utility",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Tools width typescript",
   "main": "dist/index.js",
   "private": false,
