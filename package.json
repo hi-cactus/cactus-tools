@@ -1,17 +1,29 @@
 {
   "name": "utility",
   "version": "0.0.1",
-  "description": "工具类 Typescript",
-  "main": "index.js",
+  "description": "Tools width typescript",
+  "main": "dist/index.js",
+  "private": false,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lib": "npx gulp",
+    "build": "webpack --config webpack.prod.js",
+    "test": "jest test"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Wimjiang/utility.git"
   },
-  "keywords": ["javascript", "utils"],
-  "author": "",
+  "keywords": [
+    "javascript",
+    "tools"
+  ],
+  "files": [
+    "/"
+  ],
+  "author": {
+    "name": "Jiang, Wim",
+    "email": "firstly.jiangwei@gmail.com"
+  },
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Wimjiang/utility/issues"
@@ -19,17 +31,33 @@
   "homepage": "https://github.com/Wimjiang/utility#readme",
   "devDependencies": {
     "@types/jest": "^24.0.16",
+    "clean-webpack-plugin": "^3.0.0",
+    "gulp": "^4.0.2",
+    "gulp-typescript": "^5.0.1",
     "jest": "^24.8.0",
     "ts-jest": "^24.0.2",
+    "ts-loader": "^6.0.4",
     "ts-node": "^8.3.0",
-    "typescript": "^3.5.3"
+    "typescript": "^3.5.3",
+    "webpack": "^4.38.0",
+    "webpack-cli": "^3.3.6",
+    "webpack-node-externals": "^1.7.2"
   },
   "jest": {
     "testURL": "http://localhost",
     "transform": {
       "^.+\\.(ts|tsx)$": "ts-jest"
     },
-    "testMatch": ["**/test/*.+(ts|tsx)"],
-    "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"]
+    "testMatch": [
+      "**/test/*.+(ts|tsx)"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
   }
 }

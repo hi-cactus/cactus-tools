@@ -1,0 +1,8 @@
+#Development
+.vscode
+test
+src
+static
+gulpfile.js
+webpack.config.js
+webpack.pro.js

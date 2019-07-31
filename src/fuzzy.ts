@@ -1,25 +1,7 @@
-import pick from "./pick";
-import getType from "./type";
+import pick from './pick';
+import { isArray, isString } from './type';
+import valuesDeep from './valuesDeep';
 
-/**
- * 递归获取 Object value
- * @param {Object} params
- * @param {Number} index 初始值 默认为0
- * @param {(String|Number|Boolean)[]}} value 一般传入空数组
- */
-function vals(params: [{ [key: string]: any }], index: number, value: any[]) {
-  const keys: string[] = Object.keys(params);
-  const len = keys.length;
-  if (index > len) return;
-  const key:string = keys[index];
-  const val = params[key];
-  if (getType(val) === "object" || getType(val) === "array") {
-    vals(val, 0, value);
-  } else {
-    value.push(val);
-    vals(params, index + 1, value);
-  }
-}
 /**
  * 递归 搜索
  * @param {String} text
@@ -27,17 +9,22 @@ function vals(params: [{ [key: string]: any }], index: number, value: any[]) {
  * @return {number[]} 返回包含 text 字段的key值
  * @example search('a', [{a: 1}])
  */
-function search(searchs, key, parents, selects, id) {
+function search(
+  searchs: string[],
+  key: number,
+  parents: { [key: string]: any }[],
+  selects: any[],
+  id: string
+) {
   const len = searchs.length;
   const text = searchs[key];
   if (key > len - 1) return;
-  const val = [];
+  const val: any[] = [];
   parents.forEach(item => {
-    const value = [];
-    vals(item, 0, value);
+    const value = valuesDeep(item);
     if (
       value
-        .join("")
+        .join('')
         .toLowerCase()
         .includes(text)
     ) {
@@ -57,8 +44,12 @@ function search(searchs, key, parents, selects, id) {
  * @param {string|number[]} dimensions params
  * @param {string} key
  */
-function sortBy(params, dimensions, key) {
-  const valss = [];
+function sortBy(
+  params: { [key: string]: any }[],
+  dimensions: string[],
+  key: string
+) {
+  const valss: { [key: string]: any }[] = [];
   dimensions.forEach(o => {
     valss.push(...params.filter(item => item[key] === o));
   });
@@ -68,7 +59,7 @@ function sortBy(params, dimensions, key) {
 
 type OPTIONS = {
   key: string;
-  keys: string[];
+  keys?: string[];
 };
 
 /**
@@ -81,33 +72,44 @@ type OPTIONS = {
  * @param {String} text 搜索字符
  * @param {String|Array} parents  搜索对象
  * @param {Object} {keys} 在给定范围内的keys 进行模糊搜索 给定 主键 key
- * @example fuzzy('a', [{a:1}], {keys: ['a'], key: ';})
+ * @param {OPTIONS} options
+ * @returns {object[]}
+ * @example
+ *
+ * fuzzy('a', [{a:'aaaa'}, {a: 'bbb'}], {key: ''})
+ * // => [{a:'aaaa'}]
+ *
+ *
  */
 export default function fuzzy(
   text: string,
-  parents: object[],
+  parents: { [key: string]: any }[],
   options: OPTIONS
-) {
-  if (getType(parents) !== "string" && getType(parents) !== "array")
-    throw Error("params parents only accept String or Array");
-  if (getType(text) !== "string") throw Error("params text only accept String");
+): { [key: string]: any }[] {
+  if (!isArray(parents)) throw Error('Params parents only accept Array');
+  if (!isString(text)) throw Error('Params text only accept String');
 
   const nextText = text.trim().toLowerCase();
 
-  if (nextText.length === 0) return null;
+  if (nextText.length === 0) return parents;
 
   const { keys, key } = options;
   // 按照范围keys 得到新parnts
-  const nextParents = parents.map(item => pick(item, keys.concat(key)));
-  const selects = [];
+  let nextParents = [];
+  if (isArray(keys)) {
+    nextParents = parents.map(item => pick(item, keys.concat(key)));
+  } else nextParents = parents;
+  const selects: any[] = [];
 
   // 根据空格分为多个字段数字
-  const keyWords = [...new Set(nextText.split(";"))].filter(o => o.length > 0);
+  const keyWords = Array.from(new Set(nextText.split(';')))
+    .filter(o => o.trim().length > 0)
+    .map(o => o.trim());
+
   search(keyWords, 0, nextParents, selects, key);
 
   // 去重key
-  const chooseKey = [...new Set(selects)];
+  const chooseKey = [...Array.from(new Set(selects))];
   const chooses = parents.filter(o => chooseKey.includes(o[key]));
-
   return [...sortBy(chooses, chooseKey, key)];
 }

@@ -1,4 +1,4 @@
-import getType from './type';
+import { isObject, isArray } from './type';
 
 /**
  * 获取所有value 值
@@ -34,7 +34,7 @@ export default function valuesDeep(value: any[] | object): any[] {
  *
  */
 function vals(
-  parent: { [key: string]: any } | { [key: string]: any },
+  parent: { [key: string]: any },
   index: number,
   value: any[]
 ): void {
@@ -44,7 +44,7 @@ function vals(
   const key = keys[index];
   const val = parent[key];
 
-  if (getType(val) === 'object' || getType(val) === 'array') {
+  if (isObject(val) || isArray(val)) {
     vals(val, 0, value);
     vals(parent, index + 1, value);
   } else {

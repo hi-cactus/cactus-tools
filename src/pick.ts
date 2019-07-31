@@ -8,26 +8,22 @@
  */
 export default function pick(parent: object, props?: string[]): object {
   const value = {};
-    if (parent === null) return value;
+  if (parent === null) return value;
   if (!props) return value;
   if (props.length === 0) return value;
   vals(parent, props, 0, value);
-  return {};
+  return value;
 }
 
-function vals(
-  parent: object,
-  props: string[],
-  index: number,
-  value: object
-): void {
+function vals(parent: { [key: string]: any }, props: string[], index: number, value: object): void {
   const len = props.length;
   if (index > len - 1) return;
   const key = props[index];
 
-  if (parent.hasOwnProperty("key")) {
-    Object.assign({}, value, {
-      // [key]: parent[key]
+  if (parent.hasOwnProperty(key)) {
+    Object.assign(value, {
+      [key]: parent[key],
     });
+    vals(parent, props, index + 1, value);
   } else vals(parent, props, index + 1, value);
 }
