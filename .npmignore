@@ -1,8 +1,9 @@
 #Development
 .vscode
+.prettierrc
 test
 src
 static
 gulpfile.js
-webpack.config.js
-webpack.pro.js
+webpack.prod.js
+tsconfig.json

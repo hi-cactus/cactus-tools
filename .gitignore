@@ -2,14 +2,11 @@
 
 # dependencies
 /node_modules
-package-lock.json
-
-# testing
-/coverage
 
 # production
 /build
 /dist
+*.js
 
 # misc
 .DS_Store
@@ -21,3 +18,4 @@ package-lock.json
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+package-lock.json
