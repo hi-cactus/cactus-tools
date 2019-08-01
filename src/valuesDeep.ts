@@ -14,9 +14,9 @@ import { isObject, isArray } from './type';
  *
  */
 export default function valuesDeep(value: any[] | object): any[] {
-  const val: any[] = [];
-  vals(value, 0, val);
-  return val;
+    const val: any[] = [];
+    vals(value, 0, val);
+    return val;
 }
 
 /**
@@ -34,21 +34,21 @@ export default function valuesDeep(value: any[] | object): any[] {
  *
  */
 function vals(
-  parent: { [key: string]: any },
-  index: number,
-  value: any[]
+    parent: { [key: string]: any },
+    index: number,
+    value: any[]
 ): void {
-  const keys = Object.keys(parent);
-  const len = keys.length;
-  if (index > len - 1) return;
-  const key = keys[index];
-  const val = parent[key];
+    const keys = Object.keys(parent);
+    const len = keys.length;
+    if (index > len - 1) return;
+    const key = keys[index];
+    const val = parent[key];
 
-  if (isObject(val) || isArray(val)) {
-    vals(val, 0, value);
-    vals(parent, index + 1, value);
-  } else {
-    value.push(val);
-    vals(parent, index + 1, value);
-  }
+    if (isObject(val) || isArray(val)) {
+        vals(val, 0, value);
+        vals(parent, index + 1, value);
+    } else {
+        value.push(val);
+        vals(parent, index + 1, value);
+    }
 }

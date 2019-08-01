@@ -15,5 +15,5 @@
  *
  */
 export default function values(value: any[] | object): any[] {
-  return Object.values(value);
+    return Object.values(value);
 }

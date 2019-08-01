@@ -1,13 +1,30 @@
 import pick from './pick';
 import fuzzy from './fuzzy';
-import type from './type';
+import getType, {
+    isArray,
+    isBoolean,
+    isFunction,
+    isNull,
+    isUndefined,
+    isNumber,
+    isString,
+    isObject,
+} from './type';
 import values from './values';
 import valuesDeep from './valuesDeep';
-const util = {
-  pick,
-  fuzzy,
-  type,
-  values,
-  valuesDeep,
+const utility = {
+    pick,
+    fuzzy,
+    getType,
+    isArray,
+    isBoolean,
+    isFunction,
+    isNull,
+    isUndefined,
+    isNumber,
+    isString,
+    isObject,
+    values,
+    valuesDeep,
 };
-export default util;
+export default utility;
