@@ -6,7 +6,5 @@ test('val', () => {
     'g',
   ]);
 
-  console.log(val);
-
   expect(val).toStrictEqual({ a: 1, g: 5 });
 });

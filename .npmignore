@@ -1,6 +1,7 @@
 #Development
 .vscode
 .prettierrc
+assets
 test
 src
 static
