@@ -1,5 +1,10 @@
+1.0.3 / 2019-08-01
+---
+
+- Add `fuzzy, pick, type, values, valuesDeep`
+- Add unit testing
+
 0.0.1 / 2019-07-30
 ---
 
 - Initialization project
-- 
