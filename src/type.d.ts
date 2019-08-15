@@ -1,18 +1,17 @@
-export declare enum TYPE_MSG {
-    'string',
-    'number',
-    'boolean',
-    'array',
-    'null',
-    'undefined',
-    'function',
-    'object',
-    'set',
-    'map',
-    'symbol',
-}
+export type TYPE_MSG =
+    | 'string'
+    | 'number'
+    | 'boolean'
+    | 'array'
+    | 'null'
+    | 'undefined'
+    | 'function'
+    | 'object'
+    | 'set'
+    | 'map'
+    | 'symbol';
 
-export declare function getType(value: any): keyof TYPE_MSG;
+export declare function getType(value: any): TYPE_MSG;
 
 export declare function isString(value: any): value is string;
 

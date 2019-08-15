@@ -1,1 +1,1 @@
-export declare function valuesDeep(value: any[] | object): any[];
+export function valuesDeep(value: any[] | object): any[];
