@@ -17,7 +17,7 @@
 
 ▸ **pick**(`parent`: object, `props?`: string[]): *object*
 
-*Defined in [pick.ts:13](https://github.com/Wimjiang/utility/blob/f148596/src/pick.ts#L13)*
+*Defined in [pick.ts:13](https://github.com/Wimjiang/utility/blob/dd998b5/src/pick.ts#L13)*
 
 创建一个从 object 中选中的属性的对象。
 
@@ -40,7 +40,7 @@ ___
 
 ▸ **vals**(`parent`: object, `props`: string[], `index`: number, `value`: object): *void*
 
-*Defined in [pick.ts:22](https://github.com/Wimjiang/utility/blob/f148596/src/pick.ts#L22)*
+*Defined in [pick.ts:22](https://github.com/Wimjiang/utility/blob/dd998b5/src/pick.ts#L22)*
 
 **Parameters:**
 

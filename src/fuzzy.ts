@@ -70,11 +70,11 @@ type OPTIONS = {
  *   后一个字段只对前一个字段的搜索结果进行排序,并置顶最接近的结果
  *
  * @since 0.0.1
- * @param {string} text 搜索字符
- * @param {Object[]} parents  搜索对象
- * @param {OPTIONS} options OPTIONS 配置项
- * @param {string} options.key 主键 key 指定对象中唯一不重复的key
- * @param {string[]} [options.keys] 可选 指定搜索范围 指定后只搜索范围内的value
+ * @param {string} text - 搜索字符
+ * @param {Object[]} parents -  搜索对象
+ * @param {Object} options - OPTIONS 配置项
+ * @param {string} key - options.key 主键 key 指定对象中唯一不重复的key
+ * @param {string[]} keys - options.keys 可选 指定搜索范围 指定后只搜索范围内的value
  * @returns {Object[]}
  * @example
  *

@@ -22,7 +22,7 @@
 
 Ƭ **OPTIONS**: *object*
 
-*Defined in [fuzzy.ts:60](https://github.com/Wimjiang/utility/blob/f148596/src/fuzzy.ts#L60)*
+*Defined in [fuzzy.ts:60](https://github.com/Wimjiang/utility/blob/dd998b5/src/fuzzy.ts#L60)*
 
 #### Type declaration:
 
@@ -36,7 +36,7 @@
 
 ▸ **fuzzy**(`text`: string, `parents`: object[], `options`: [OPTIONS](_fuzzy_.md#options)): *object[]*
 
-*Defined in [fuzzy.ts:88](https://github.com/Wimjiang/utility/blob/f148596/src/fuzzy.ts#L88)*
+*Defined in [fuzzy.ts:88](https://github.com/Wimjiang/utility/blob/dd998b5/src/fuzzy.ts#L88)*
 
 模糊搜索
 
@@ -69,7 +69,7 @@ ___
 
 ▸ **search**(`searchs`: string[], `key`: number, `parents`: object[], `selects`: any[], `id`: string): *void*
 
-*Defined in [fuzzy.ts:12](https://github.com/Wimjiang/utility/blob/f148596/src/fuzzy.ts#L12)*
+*Defined in [fuzzy.ts:12](https://github.com/Wimjiang/utility/blob/dd998b5/src/fuzzy.ts#L12)*
 
 **Parameters:**
 
@@ -89,7 +89,7 @@ ___
 
 ▸ **sortBy**(`params`: object[], `dimensions`: string[], `key`: string): *object[]*
 
-*Defined in [fuzzy.ts:47](https://github.com/Wimjiang/utility/blob/f148596/src/fuzzy.ts#L47)*
+*Defined in [fuzzy.ts:47](https://github.com/Wimjiang/utility/blob/dd998b5/src/fuzzy.ts#L47)*
 
 **Parameters:**
 
