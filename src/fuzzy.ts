@@ -2,13 +2,13 @@ import pick from './pick';
 import { isArray, isString } from './type';
 import valuesDeep from './valuesDeep';
 
-/**
- * 递归 搜索
- * @param {String} text
- * @param {object[]} parents
- * @return {number[]} 返回包含 text 字段的key值
- * @example search('a', [{a: 1}])
- */
+//
+// 递归 搜索
+// @param {String} text
+// @param {object[]} parents
+// @return {number[]} 返回包含 text 字段的key值
+// @example search('a', [{a: 1}])
+//
 function search(
     searchs: string[],
     key: number,
@@ -37,13 +37,13 @@ function search(
 
     search(searchs, key + 1, next, selects, id);
 }
-/**
- * 按照 数组顺序排序
- *
- * @param {*} params
- * @param {string|number[]} dimensions params
- * @param {string} key
- */
+///
+// 按照 数组顺序排序
+//
+// @param {*} params
+// @param {string|number[]} dimensions params
+// @param {string} key
+//
 function sortBy(
     params: { [key: string]: any }[],
     dimensions: string[],
@@ -65,11 +65,9 @@ type OPTIONS = {
 /**
  * 模糊搜索
  *
- * >> 支持多字段搜索,通过;分隔 => 'first;second;third';
- * >>
- * >> 返回第一个字段搜索的结果;
- * >>
- * >> 后一个字段只对前一个字段的搜索结果进行排序,并置顶最接近的结果
+ *   支持多字段搜索,通过;分隔 => 'first;second;third';
+ *   返回第一个字段搜索的结果;
+ *   后一个字段只对前一个字段的搜索结果进行排序,并置顶最接近的结果
  *
  * @since 0.0.1
  * @param {string} text 搜索字符

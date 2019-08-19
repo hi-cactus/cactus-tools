@@ -18,20 +18,18 @@ export default function valuesDeep(value: any[] | object): any[] {
     return val;
 }
 
-/**
- * 递归获取 Object value
- *
- * @param {({ [key: string]: any } | { [key: string]: any })} parent
- * @param {number} index
- * @param {any[]} value
- * @returns {void}
- *
- * @example
- *
- * vals({ a: 1, 1: 2, b: [{c: 3}] }, 0, []);
- * // => [1, 2, 3]
- *
- */
+//
+// 递归获取 Object value
+//
+// @param {({ [key: string]: any } | { [key: string]: any })} parent
+// @param {number} index
+// @param {any[]} value
+// @returns {void}
+// @example
+// vals({ a: 1, 1: 2, b: [{c: 3}] }, 0, []);
+// // => [1, 2, 3]
+//
+///
 function vals(
     parent: { [key: string]: any },
     index: number,

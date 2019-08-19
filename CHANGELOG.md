@@ -1,4 +1,10 @@
-1.0.3 / 2019-08-01
+1.0.0 / 2019-08-19
+---
+
+- Add docs 
+- Fix readme
+
+0.0.9 / 2019-08-01
 ---
 
 - Add `fuzzy, pick, type, values, valuesDeep`
