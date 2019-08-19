@@ -1,10 +1,14 @@
 /**
  * 创建一个从 object 中选中的属性的对象。
+ * 
+ * >> 不改变原对象
+ * 
  *
  * @export
- * @param {object} parent
- * @param {(string[])} props
+ * @param {object} parent 原对象
+ * @param {(string[])} props 属性名
  * @returns {object}
+ * 
  */
 export default function pick(parent: object, props?: string[]): object {
     const value = {};

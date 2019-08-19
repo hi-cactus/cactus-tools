@@ -7,6 +7,7 @@
 /build
 /dist
 *.js
+*.d.ts
 
 # misc
 .DS_Store

@@ -1,12 +1,11 @@
 import { isObject, isArray } from './type';
 
 /**
- * 获取所有value 值
+ * 获取对象的 value
  *
  * @export
- * @param {(any[] | object)} value
+ * @param {Array|Object} value
  * @returns {string[]}
- *
  * @example
  *
  * valuesDeep({a: 1, b: [{c: 1}]})

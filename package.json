@@ -1,6 +1,6 @@
 {
-  "name": "utility",
-  "version": "1.0.3",
+  "name": "@utility/tools",
+  "version": "1.0.0",
   "description": "Tools width typescript",
   "main": "dist/index.js",
   "module": "index.js",
@@ -8,7 +8,7 @@
   "scripts": {
     "lib": "npx gulp",
     "build": "webpack --config webpack.prod.js",
-    "release": "npm run build & npm run lib",
+    "release": "npm run build && npm run lib",
     "test": "jest test"
   },
   "repository": {

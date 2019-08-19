@@ -12,7 +12,8 @@ import getType, {
 } from './type';
 import values from './values';
 import valuesDeep from './valuesDeep';
-const utility = {
+
+const tools = {
     pick,
     fuzzy,
     getType,
@@ -27,4 +28,20 @@ const utility = {
     values,
     valuesDeep,
 };
-export default utility;
+export default tools;
+
+export {
+    pick,
+    fuzzy,
+    getType,
+    isArray,
+    isBoolean,
+    isFunction,
+    isNull,
+    isUndefined,
+    isNumber,
+    isString,
+    isObject,
+    values,
+    valuesDeep,
+};

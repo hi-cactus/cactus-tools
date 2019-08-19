@@ -65,19 +65,25 @@ type OPTIONS = {
 /**
  * 模糊搜索
  *
- * >> 多字段输入通过; 分隔 再次输入的字段 会在;前的字段上的搜索结果上进行搜索排序,会置顶多字段匹配的最接近的结果
+ * >> 支持多字段搜索,通过;分隔 => 'first;second;third';
+ * >>
+ * >> 返回第一个字段搜索的结果;
+ * >>
+ * >> 后一个字段只对前一个字段的搜索结果进行排序,并置顶最接近的结果
  *
  * @since 0.0.1
- * @category Collecting
- * @param {String} text 搜索字符
- * @param {Array} parents  搜索对象
- * @param {Object} {keys} 在给定范围内的keys 进行模糊搜索 给定 主键 key
- * @param {OPTIONS} options
+ * @param {string} text 搜索字符
+ * @param {Object[]} parents  搜索对象
+ * @param {OPTIONS} options OPTIONS 配置项
+ * @param {string} options.key 主键 key 指定对象中唯一不重复的key
+ * @param {string[]} [options.keys] 可选 指定搜索范围 指定后只搜索范围内的value
  * @returns {Object[]}
  * @example
  *
  * fuzzy('a', [{a:'aaaa'}, {a: 'bbb'}], {key: ''})
  * // => [{a:'aaaa'}]
+ * fuzzy('first;second', [{a:'first,second',id; 1}, {a: 'first', id: 2}], {key: 'a'})
+ * // => [{a:'first,second',id; 1}]
  *
  *
  */
