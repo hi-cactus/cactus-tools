@@ -9,7 +9,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'index.js',
-    library: 'utility',
+    library: 'tools',
     libraryTarget: 'umd', //发布组件专用
     umdNamedDefine: true,
   },

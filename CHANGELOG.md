@@ -1,3 +1,9 @@
+
+1.0.1 / 2019-08-22
+---
+
+- Packaged as ES5 to compatibility webpack`s config exclude node_modules
+
 1.0.0 / 2019-08-19
 ---
 
