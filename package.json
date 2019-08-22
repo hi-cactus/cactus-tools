@@ -1,6 +1,6 @@
 {
     "name": "@utility/tools",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Tools width typescript",
     "main": "dist/index.js",
     "module": "index.js",
@@ -16,7 +16,10 @@
         "type": "git",
         "url": "git+https://github.com/Wimjiang/utility.git"
     },
-    "keywords": ["javascript", "tools"],
+    "keywords": [
+        "javascript",
+        "tools"
+    ],
     "author": {
         "name": "Jiang, Wim",
         "email": "firstly.jiangwei@gmail.com"
@@ -47,8 +50,17 @@
         "transform": {
             "^.+\\.(ts|tsx)$": "ts-jest"
         },
-        "testMatch": ["**/test/*.+(ts|tsx)"],
-        "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"]
+        "testMatch": [
+            "**/test/*.+(ts|tsx)"
+        ],
+        "moduleFileExtensions": [
+            "ts",
+            "tsx",
+            "js",
+            "jsx",
+            "json",
+            "node"
+        ]
     },
     "dependencies": {}
 }
