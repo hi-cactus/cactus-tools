@@ -4,6 +4,7 @@
     "description": "Tools width typescript",
     "main": "dist/index.js",
     "module": "index.js",
+    "types": "index.d.ts",
     "private": false,
     "scripts": {
         "lib": "npx gulp",
