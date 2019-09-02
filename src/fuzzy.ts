@@ -60,6 +60,7 @@ function sortBy(
 type OPTIONS = {
     key: string;
     keys?: string[];
+    splitType?: string;
 };
 
 /**
@@ -75,6 +76,7 @@ type OPTIONS = {
  * @param {Object} options - OPTIONS 配置项
  * @param {string} key - options.key 主键 key 指定对象中唯一不重复的key
  * @param {string[]} keys - options.keys 可选 指定搜索范围 指定后只搜索范围内的value
+ * @param {string[]} splitType - options.splitType 可选 可以指定用于分割阻断的类型， 默认 ;
  * @returns {Object[]}
  * @example
  *
@@ -105,8 +107,9 @@ export default function fuzzy(
     } else nextParents = parents;
     const selects: any[] = [];
 
-    // 根据空格分为多个字段数字
-    const keyWords = Array.from(new Set(nextText.split(';')))
+    // 根据splitType 的值分为多个字段数字
+    const { splitType } = options;
+    const keyWords = Array.from(new Set(nextText.split(splitType || ';')))
         .filter(o => o.trim().length > 0)
         .map(o => o.trim());
 
