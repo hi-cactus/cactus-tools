@@ -4,6 +4,7 @@
     "description": "Tools width typescript",
     "main": "dist/index.js",
     "module": "index.js",
+    "types": "index.d.ts",
     "private": false,
     "scripts": {
         "lib": "npx gulp",
@@ -24,7 +25,7 @@
         "name": "Jiang, Wim",
         "email": "firstly.jiangwei@gmail.com"
     },
-    "license": "ISC",
+    "license": "MIT",
     "bugs": {
         "url": "https://github.com/Wimjiang/utility/issues"
     },
