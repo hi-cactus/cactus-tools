@@ -21,7 +21,7 @@ function search(
     if (key > len - 1) return;
     const val: any[] = [];
     parents.forEach(item => {
-        const value = valuesDeep(item);
+        const value = valuesDeep(pick(item, Object.keys(item).filter(item => item !== id)));
         if (
             value
                 .join('')
