@@ -9,19 +9,21 @@ import valuesDeep from './valuesDeep';
 // @return {number[]} 返回包含 text 字段的key值
 // @example search('a', [{a: 1}])
 //
-function search(
+function search<T extends object, K extends keyof T>(
     searchs: string[],
     key: number,
-    parents: { [key: string]: any }[],
-    selects: any[],
-    id: string
+    parents: T[],
+    selects: T[K][],
+    id: K
 ) {
     const len = searchs.length;
     const text = searchs[key];
     if (key > len - 1) return;
     const val: any[] = [];
     parents.forEach(item => {
-        const value = valuesDeep(pick(item, Object.keys(item).filter(item => item !== id)));
+        const value = valuesDeep(
+            pick<T, K>(item, Object.keys(item).filter(o => o !== id) as K[])
+        );
         if (
             value
                 .join('')
@@ -37,19 +39,19 @@ function search(
 
     search(searchs, key + 1, next, selects, id);
 }
-///
+//
 // 按照 数组顺序排序
 //
 // @param {*} params
 // @param {string|number[]} dimensions params
 // @param {string} key
 //
-function sortBy(
-    params: { [key: string]: any }[],
-    dimensions: string[],
-    key: string
+function sortBy<T extends object, K extends keyof T>(
+    params: T[],
+    dimensions: T[K][],
+    key: K
 ) {
-    const valss: { [key: string]: any }[] = [];
+    const valss: T[] = [];
     dimensions.forEach(o => {
         valss.push(...params.filter(item => item[key] === o));
     });
@@ -87,10 +89,14 @@ type OPTIONS = {
  *
  *
  */
-export default function fuzzy(
+export default function fuzzy<T extends object, K extends keyof T>(
     text: string,
-    parents: { [key: string]: any }[],
-    options: OPTIONS
+    parents: T[],
+    options: {
+        key: K;
+        keys?: K[];
+        splitType?: string;
+    }
 ): { [key: string]: any }[] {
     if (!isArray(parents)) throw Error('Params parents only accept Array');
     if (!isString(text)) throw Error('Params text only accept String');
@@ -101,10 +107,11 @@ export default function fuzzy(
 
     const { keys, key } = options;
     // 按照范围keys 得到新parnts
-    let nextParents = [];
+    let nextParents: { [P in K]: T[P] }[] | [] = [];
     if (isArray(keys)) {
-        nextParents = parents.map(item => pick(item, keys.concat(key)));
+        nextParents = parents.map(item => pick<T, K>(item, keys.concat(key)));
     } else nextParents = parents;
+
     const selects: any[] = [];
 
     // 根据splitType 的值分为多个字段数字
@@ -113,7 +120,7 @@ export default function fuzzy(
         .filter(o => o.trim().length > 0)
         .map(o => o.trim());
 
-    search(keyWords, 0, nextParents, selects, key);
+    search<{ [P in K]: T[P] }, K>(keyWords, 0, nextParents, selects, key);
 
     // 去重key
     const chooseKey = [...Array.from(new Set(selects))];

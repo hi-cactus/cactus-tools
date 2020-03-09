@@ -6,18 +6,30 @@
 
 ## Index
 
+### Type aliases
+
+* [Many](_pick_.md#many)
+
 ### Functions
 
 * [pick](_pick_.md#pick)
 * [vals](_pick_.md#vals)
 
+## Type aliases
+
+###  Many
+
+Ƭ **Many**: *T | ReadonlyArray‹T›*
+
+*Defined in [pick.ts:1](https://github.com/Wimjiang/utility/blob/23b6715/src/pick.ts#L1)*
+
 ## Functions
 
 ###  pick
 
-▸ **pick**(`parent`: object, `props?`: string[]): *object*
+▸ **pick**<**T**, **K**>(`parent`: T, `props?`: K[]): *Pick‹T, K›*
 
-*Defined in [pick.ts:13](https://github.com/Wimjiang/utility/blob/dd998b5/src/pick.ts#L13)*
+*Defined in [pick.ts:15](https://github.com/Wimjiang/utility/blob/23b6715/src/pick.ts#L15)*
 
 创建一个从 object 中选中的属性的对象。
 
@@ -25,30 +37,42 @@
 
 **`export`** 
 
+**Type parameters:**
+
+▪ **T**: *__type*
+
+▪ **K**: *keyof T*
+
 **Parameters:**
 
 Name | Type | Description |
 ------ | ------ | ------ |
-`parent` | object | 原对象 |
-`props?` | string[] | 属性名 |
+`parent` | T | 原对象 |
+`props?` | K[] | 属性名 |
 
-**Returns:** *object*
+**Returns:** *Pick‹T, K›*
 
 ___
 
 ###  vals
 
-▸ **vals**(`parent`: object, `props`: string[], `index`: number, `value`: object): *void*
+▸ **vals**<**T**, **K**>(`parent`: T, `props`: K[], `index`: number, `value`: __type): *void*
 
-*Defined in [pick.ts:22](https://github.com/Wimjiang/utility/blob/dd998b5/src/pick.ts#L22)*
+*Defined in [pick.ts:27](https://github.com/Wimjiang/utility/blob/23b6715/src/pick.ts#L27)*
+
+**Type parameters:**
+
+▪ **T**: *object*
+
+▪ **K**: *keyof T*
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`parent` | object |
-`props` | string[] |
+`parent` | T |
+`props` | K[] |
 `index` | number |
-`value` | object |
+`value` | __type |
 
 **Returns:** *void*

@@ -26,7 +26,7 @@
 
 • **array**:
 
-*Defined in [type.ts:5](https://github.com/Wimjiang/utility/blob/dd998b5/src/type.ts#L5)*
+*Defined in [type.ts:5](https://github.com/Wimjiang/utility/blob/23b6715/src/type.ts#L5)*
 
 ___
 
@@ -34,7 +34,7 @@ ___
 
 • **boolean**:
 
-*Defined in [type.ts:4](https://github.com/Wimjiang/utility/blob/dd998b5/src/type.ts#L4)*
+*Defined in [type.ts:4](https://github.com/Wimjiang/utility/blob/23b6715/src/type.ts#L4)*
 
 ___
 
@@ -42,7 +42,7 @@ ___
 
 • **function**:
 
-*Defined in [type.ts:8](https://github.com/Wimjiang/utility/blob/dd998b5/src/type.ts#L8)*
+*Defined in [type.ts:8](https://github.com/Wimjiang/utility/blob/23b6715/src/type.ts#L8)*
 
 ___
 
@@ -50,7 +50,7 @@ ___
 
 • **map**:
 
-*Defined in [type.ts:11](https://github.com/Wimjiang/utility/blob/dd998b5/src/type.ts#L11)*
+*Defined in [type.ts:11](https://github.com/Wimjiang/utility/blob/23b6715/src/type.ts#L11)*
 
 ___
 
@@ -58,7 +58,7 @@ ___
 
 • **null**:
 
-*Defined in [type.ts:6](https://github.com/Wimjiang/utility/blob/dd998b5/src/type.ts#L6)*
+*Defined in [type.ts:6](https://github.com/Wimjiang/utility/blob/23b6715/src/type.ts#L6)*
 
 ___
 
@@ -66,7 +66,7 @@ ___
 
 • **number**:
 
-*Defined in [type.ts:3](https://github.com/Wimjiang/utility/blob/dd998b5/src/type.ts#L3)*
+*Defined in [type.ts:3](https://github.com/Wimjiang/utility/blob/23b6715/src/type.ts#L3)*
 
 ___
 
@@ -74,7 +74,7 @@ ___
 
 • **object**:
 
-*Defined in [type.ts:9](https://github.com/Wimjiang/utility/blob/dd998b5/src/type.ts#L9)*
+*Defined in [type.ts:9](https://github.com/Wimjiang/utility/blob/23b6715/src/type.ts#L9)*
 
 ___
 
@@ -82,7 +82,7 @@ ___
 
 • **set**:
 
-*Defined in [type.ts:10](https://github.com/Wimjiang/utility/blob/dd998b5/src/type.ts#L10)*
+*Defined in [type.ts:10](https://github.com/Wimjiang/utility/blob/23b6715/src/type.ts#L10)*
 
 ___
 
@@ -90,7 +90,7 @@ ___
 
 • **string**:
 
-*Defined in [type.ts:2](https://github.com/Wimjiang/utility/blob/dd998b5/src/type.ts#L2)*
+*Defined in [type.ts:2](https://github.com/Wimjiang/utility/blob/23b6715/src/type.ts#L2)*
 
 ___
 
@@ -98,7 +98,7 @@ ___
 
 • **symbol**:
 
-*Defined in [type.ts:12](https://github.com/Wimjiang/utility/blob/dd998b5/src/type.ts#L12)*
+*Defined in [type.ts:12](https://github.com/Wimjiang/utility/blob/23b6715/src/type.ts#L12)*
 
 ___
 
@@ -106,4 +106,4 @@ ___
 
 • **undefined**:
 
-*Defined in [type.ts:7](https://github.com/Wimjiang/utility/blob/dd998b5/src/type.ts#L7)*
+*Defined in [type.ts:7](https://github.com/Wimjiang/utility/blob/23b6715/src/type.ts#L7)*

@@ -1,29 +1,34 @@
+type Many<T> = T | ReadonlyArray<T>;
+
 /**
  * 创建一个从 object 中选中的属性的对象。
- * 
+ *
  * >> 不改变原对象
- * 
+ *
  *
  * @export
  * @param {object} parent 原对象
  * @param {(string[])} props 属性名
  * @returns {object}
- * 
+ *
  */
-export default function pick(parent: object, props?: string[]): object {
-    const value = {};
-    if (parent === null) return value;
-    if (!props) return value;
-    if (props.length === 0) return value;
+export default function pick<T extends {}, K extends keyof T>(
+    parent: T,
+    props?: K[]
+): Pick<T, K> {
+    if (parent === null) return {} as Pick<T, K>;
+    if (!props) return {} as Pick<T, K>;
+    if (props.length === 0) return {} as Pick<T, K>;
+    const value: { [P in K]: T[P] } = {} as Pick<T, K>;
     vals(parent, props, 0, value);
     return value;
 }
 
-function vals(
-    parent: { [key: string]: any },
-    props: string[],
+function vals<T extends object, K extends keyof T>(
+    parent: T,
+    props: K[],
     index: number,
-    value: object
+    value: {}
 ): void {
     const len = props.length;
     if (index > len - 1) return;

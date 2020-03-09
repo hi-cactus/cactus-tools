@@ -16,7 +16,7 @@
 
 ▸ **values**(`value`: any[] | object): *any[]*
 
-*Defined in [values.ts:17](https://github.com/Wimjiang/utility/blob/dd998b5/src/values.ts#L17)*
+*Defined in [values.ts:17](https://github.com/Wimjiang/utility/blob/23b6715/src/values.ts#L17)*
 
 获取对象的value值
 
