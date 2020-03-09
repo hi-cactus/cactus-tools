@@ -21,7 +21,7 @@
 
 Ƭ **Many**: *T | ReadonlyArray‹T›*
 
-*Defined in [pick.ts:1](https://github.com/Wimjiang/utility/blob/23b6715/src/pick.ts#L1)*
+*Defined in [pick.ts:1](https://github.com/Wimjiang/utility/blob/fefcd28/src/pick.ts#L1)*
 
 ## Functions
 
@@ -29,7 +29,7 @@
 
 ▸ **pick**<**T**, **K**>(`parent`: T, `props?`: K[]): *Pick‹T, K›*
 
-*Defined in [pick.ts:15](https://github.com/Wimjiang/utility/blob/23b6715/src/pick.ts#L15)*
+*Defined in [pick.ts:15](https://github.com/Wimjiang/utility/blob/fefcd28/src/pick.ts#L15)*
 
 创建一个从 object 中选中的属性的对象。
 
@@ -58,7 +58,7 @@ ___
 
 ▸ **vals**<**T**, **K**>(`parent`: T, `props`: K[], `index`: number, `value`: __type): *void*
 
-*Defined in [pick.ts:27](https://github.com/Wimjiang/utility/blob/23b6715/src/pick.ts#L27)*
+*Defined in [pick.ts:27](https://github.com/Wimjiang/utility/blob/fefcd28/src/pick.ts#L27)*
 
 **Type parameters:**
 

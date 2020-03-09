@@ -32,7 +32,7 @@
 
 • **toString**: *toString* =  Object.prototype.toString
 
-*Defined in [type.ts:40](https://github.com/Wimjiang/utility/blob/23b6715/src/type.ts#L40)*
+*Defined in [type.ts:40](https://github.com/Wimjiang/utility/blob/fefcd28/src/type.ts#L40)*
 
 ## Functions
 
@@ -40,7 +40,7 @@
 
 ▸ **getType**(`value`: any): *string*
 
-*Defined in [type.ts:33](https://github.com/Wimjiang/utility/blob/23b6715/src/type.ts#L33)*
+*Defined in [type.ts:33](https://github.com/Wimjiang/utility/blob/fefcd28/src/type.ts#L33)*
 
 Get the type of value
 
@@ -70,7 +70,7 @@ ___
 
 ▸ **isArray**(`value`: any): *boolean*
 
-*Defined in [type.ts:61](https://github.com/Wimjiang/utility/blob/23b6715/src/type.ts#L61)*
+*Defined in [type.ts:61](https://github.com/Wimjiang/utility/blob/fefcd28/src/type.ts#L61)*
 
 **Parameters:**
 
@@ -86,7 +86,7 @@ ___
 
 ▸ **isBoolean**(`value`: any): *boolean*
 
-*Defined in [type.ts:66](https://github.com/Wimjiang/utility/blob/23b6715/src/type.ts#L66)*
+*Defined in [type.ts:66](https://github.com/Wimjiang/utility/blob/fefcd28/src/type.ts#L66)*
 
 **Parameters:**
 
@@ -102,7 +102,7 @@ ___
 
 ▸ **isFunction**(`value`: any): *boolean*
 
-*Defined in [type.ts:71](https://github.com/Wimjiang/utility/blob/23b6715/src/type.ts#L71)*
+*Defined in [type.ts:71](https://github.com/Wimjiang/utility/blob/fefcd28/src/type.ts#L71)*
 
 **Parameters:**
 
@@ -118,7 +118,7 @@ ___
 
 ▸ **isNull**(`value`: any): *boolean*
 
-*Defined in [type.ts:52](https://github.com/Wimjiang/utility/blob/23b6715/src/type.ts#L52)*
+*Defined in [type.ts:52](https://github.com/Wimjiang/utility/blob/fefcd28/src/type.ts#L52)*
 
 **Parameters:**
 
@@ -134,7 +134,7 @@ ___
 
 ▸ **isNumber**(`value`: any): *boolean*
 
-*Defined in [type.ts:47](https://github.com/Wimjiang/utility/blob/23b6715/src/type.ts#L47)*
+*Defined in [type.ts:47](https://github.com/Wimjiang/utility/blob/fefcd28/src/type.ts#L47)*
 
 **Parameters:**
 
@@ -150,7 +150,7 @@ ___
 
 ▸ **isObject**(`value`: any): *boolean*
 
-*Defined in [type.ts:76](https://github.com/Wimjiang/utility/blob/23b6715/src/type.ts#L76)*
+*Defined in [type.ts:76](https://github.com/Wimjiang/utility/blob/fefcd28/src/type.ts#L76)*
 
 **Parameters:**
 
@@ -166,7 +166,7 @@ ___
 
 ▸ **isString**(`value`: any): *boolean*
 
-*Defined in [type.ts:42](https://github.com/Wimjiang/utility/blob/23b6715/src/type.ts#L42)*
+*Defined in [type.ts:42](https://github.com/Wimjiang/utility/blob/fefcd28/src/type.ts#L42)*
 
 **Parameters:**
 
@@ -182,7 +182,7 @@ ___
 
 ▸ **isUndefined**(`value`: any): *boolean*
 
-*Defined in [type.ts:57](https://github.com/Wimjiang/utility/blob/23b6715/src/type.ts#L57)*
+*Defined in [type.ts:57](https://github.com/Wimjiang/utility/blob/fefcd28/src/type.ts#L57)*
 
 **Parameters:**
 

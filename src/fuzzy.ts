@@ -97,7 +97,7 @@ export default function fuzzy<T extends object, K extends keyof T>(
         keys?: K[];
         splitType?: string;
     }
-): { [key: string]: any }[] {
+): Pick<T, K>[] {
     if (!isArray(parents)) throw Error('Params parents only accept Array');
     if (!isString(text)) throw Error('Params text only accept String');
 

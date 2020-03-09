@@ -22,7 +22,7 @@
 
 Ƭ **OPTIONS**: *object*
 
-*Defined in [fuzzy.ts:62](https://github.com/Wimjiang/utility/blob/23b6715/src/fuzzy.ts#L62)*
+*Defined in [fuzzy.ts:62](https://github.com/Wimjiang/utility/blob/fefcd28/src/fuzzy.ts#L62)*
 
 #### Type declaration:
 
@@ -36,9 +36,9 @@
 
 ###  fuzzy
 
-▸ **fuzzy**<**T**, **K**>(`text`: string, `parents`: T[], `options`: object): *object[]*
+▸ **fuzzy**<**T**, **K**>(`text`: string, `parents`: T[], `options`: object): *Pick‹T, K›[]*
 
-*Defined in [fuzzy.ts:92](https://github.com/Wimjiang/utility/blob/23b6715/src/fuzzy.ts#L92)*
+*Defined in [fuzzy.ts:92](https://github.com/Wimjiang/utility/blob/fefcd28/src/fuzzy.ts#L92)*
 
 模糊搜索
 
@@ -81,7 +81,7 @@ Name | Type |
 `keys?` | K[] |
 `splitType?` | undefined \| string |
 
-**Returns:** *object[]*
+**Returns:** *Pick‹T, K›[]*
 
 ___
 
@@ -89,7 +89,7 @@ ___
 
 ▸ **search**<**T**, **K**>(`searchs`: string[], `key`: number, `parents`: T[], `selects`: T[K][], `id`: K): *void*
 
-*Defined in [fuzzy.ts:12](https://github.com/Wimjiang/utility/blob/23b6715/src/fuzzy.ts#L12)*
+*Defined in [fuzzy.ts:12](https://github.com/Wimjiang/utility/blob/fefcd28/src/fuzzy.ts#L12)*
 
 **Type parameters:**
 
@@ -115,7 +115,7 @@ ___
 
 ▸ **sortBy**<**T**, **K**>(`params`: T[], `dimensions`: T[K][], `key`: K): *T[]*
 
-*Defined in [fuzzy.ts:49](https://github.com/Wimjiang/utility/blob/23b6715/src/fuzzy.ts#L49)*
+*Defined in [fuzzy.ts:49](https://github.com/Wimjiang/utility/blob/fefcd28/src/fuzzy.ts#L49)*
 
 **Type parameters:**
 
