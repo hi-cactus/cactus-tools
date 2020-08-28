@@ -2,42 +2,43 @@ import pick from './pick';
 import { isArray, isString } from './type';
 import valuesDeep from './valuesDeep';
 
-//
-// 递归 搜索
-// @param {String} text
-// @param {object[]} parents
-// @return {number[]} 返回包含 text 字段的key值
-// @example search('a', [{a: 1}])
-//
+/**
+ * 递归 搜索
+ * @param searchValues {String[]} text array 搜索值
+ * @param idx 递归次数
+ * @param parents
+ * @param selects
+ * @param key
+ * @param keys
+ */
 function search<T extends object, K extends keyof T>(
-    searchs: string[],
-    key: number,
+    searchValues: string[],
+    idx: number,
     parents: T[],
     selects: T[K][],
-    id: K
+    key: K,
+    keys?: K[]
 ) {
-    const len = searchs.length;
-    const text = searchs[key];
-    if (key > len - 1) return;
+    const len = searchValues.length;
+    const text = searchValues[idx];
+    if (idx > len - 1) return;
     const val: any[] = [];
-    parents.forEach(item => {
+    parents.forEach((item) => {
         const value = valuesDeep(
-            pick<T, K>(item, Object.keys(item).filter(o => o !== id) as K[])
+            pick<T, K>(
+                item,
+                keys
+                    ? keys
+                    : (Object.keys(item).filter((o) => o !== key) as K[])
+            )
         );
-        if (
-            value
-                .join('')
-                .toLowerCase()
-                .includes(text)
-        ) {
-            val.push(item[id]);
-        }
+        if (value.join('').toLowerCase().includes(text)) val.push(item[key]);
     });
 
-    const next = parents.filter(o => val.includes(o[id]));
+    const next = parents.filter((o) => val.includes(o[key]));
     selects.unshift(...val);
 
-    search(searchs, key + 1, next, selects, id);
+    search(searchValues, idx + 1, next, selects, key, keys);
 }
 //
 // 按照 数组顺序排序
@@ -52,18 +53,12 @@ function sortBy<T extends object, K extends keyof T>(
     key: K
 ) {
     const valss: T[] = [];
-    dimensions.forEach(o => {
-        valss.push(...params.filter(item => item[key] === o));
+    dimensions.forEach((o) => {
+        valss.push(...params.filter((item) => item[key] === o));
     });
 
     return valss;
 }
-
-type OPTIONS = {
-    key: string;
-    keys?: string[];
-    splitType?: string;
-};
 
 /**
  * 模糊搜索
@@ -89,15 +84,15 @@ type OPTIONS = {
  *
  *
  */
-export default function fuzzy<T extends object, K extends keyof T>(
+export default function fuzzy<T extends object>(
     text: string,
     parents: T[],
     options: {
-        key: K;
-        keys?: K[];
+        key: keyof T;
+        keys?: (keyof T)[];
         splitType?: string;
     }
-): Pick<T, K>[] {
+): Pick<T, keyof T>[] {
     if (!isArray(parents)) throw Error('Params parents only accept Array');
     if (!isString(text)) throw Error('Params text only accept String');
 
@@ -106,10 +101,12 @@ export default function fuzzy<T extends object, K extends keyof T>(
     if (nextText.length === 0) return parents;
 
     const { keys, key } = options;
-    // 按照范围keys 得到新parnts
-    let nextParents: { [P in K]: T[P] }[] | [] = [];
+    // 按照范围keys 得到新 parents
+    let nextParents: { [P in keyof T]: T[P] }[] | [] = [];
     if (isArray(keys)) {
-        nextParents = parents.map(item => pick<T, K>(item, keys.concat(key)));
+        nextParents = parents.map((item) =>
+            pick<T, keyof T>(item, keys.concat(key))
+        );
     } else nextParents = parents;
 
     const selects: any[] = [];
@@ -117,13 +114,20 @@ export default function fuzzy<T extends object, K extends keyof T>(
     // 根据splitType 的值分为多个字段数字
     const { splitType } = options;
     const keyWords = Array.from(new Set(nextText.split(splitType || ';')))
-        .filter(o => o.trim().length > 0)
-        .map(o => o.trim());
+        .filter((o) => o.trim().length > 0)
+        .map((o) => o.trim());
 
-    search<{ [P in K]: T[P] }, K>(keyWords, 0, nextParents, selects, key);
+    search<{ [P in keyof T]: T[P] }, keyof T>(
+        keyWords,
+        0,
+        nextParents,
+        selects,
+        key,
+        keys
+    );
 
     // 去重key
     const chooseKey = [...Array.from(new Set(selects))];
-    const chooses = parents.filter(o => chooseKey.includes(o[key]));
+    const chooses = parents.filter((o) => chooseKey.includes(o[key]));
     return [...sortBy(chooses, chooseKey, key)];
 }

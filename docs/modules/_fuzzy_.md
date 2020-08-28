@@ -6,39 +6,19 @@
 
 ## Index
 
-### Type aliases
-
-* [OPTIONS](_fuzzy_.md#options)
-
 ### Functions
 
 * [fuzzy](_fuzzy_.md#fuzzy)
 * [search](_fuzzy_.md#search)
 * [sortBy](_fuzzy_.md#sortby)
 
-## Type aliases
-
-###  OPTIONS
-
-Ƭ **OPTIONS**: *object*
-
-*Defined in [fuzzy.ts:62](https://github.com/Wimjiang/utility/blob/fefcd28/src/fuzzy.ts#L62)*
-
-#### Type declaration:
-
-* **key**: *string*
-
-* **keys**? : *string[]*
-
-* **splitType**? : *undefined | string*
-
 ## Functions
 
 ###  fuzzy
 
-▸ **fuzzy**<**T**, **K**>(`text`: string, `parents`: T[], `options`: object): *Pick‹T, K›[]*
+▸ **fuzzy**<**T**>(`text`: string, `parents`: T[], `options`: object): *Pick‹T, keyof T›[]*
 
-*Defined in [fuzzy.ts:92](https://github.com/Wimjiang/utility/blob/fefcd28/src/fuzzy.ts#L92)*
+*Defined in [fuzzy.ts:87](https://github.com/Wimjiang/utility/blob/87b2a56/src/fuzzy.ts#L87)*
 
 模糊搜索
 
@@ -59,8 +39,6 @@ fuzzy('first;second', [{a:'first,second',id; 1}, {a: 'first', id: 2}], {key: 'a'
 
 ▪ **T**: *object*
 
-▪ **K**: *keyof T*
-
 **Parameters:**
 
 ▪ **text**: *string*
@@ -77,19 +55,21 @@ OPTIONS 配置项
 
 Name | Type |
 ------ | ------ |
-`key` | K |
-`keys?` | K[] |
+`key` | keyof T |
+`keys?` | keyof T[] |
 `splitType?` | undefined \| string |
 
-**Returns:** *Pick‹T, K›[]*
+**Returns:** *Pick‹T, keyof T›[]*
 
 ___
 
 ###  search
 
-▸ **search**<**T**, **K**>(`searchs`: string[], `key`: number, `parents`: T[], `selects`: T[K][], `id`: K): *void*
+▸ **search**<**T**, **K**>(`searchValues`: string[], `idx`: number, `parents`: T[], `selects`: T[K][], `key`: K, `keys?`: K[]): *void*
 
-*Defined in [fuzzy.ts:12](https://github.com/Wimjiang/utility/blob/fefcd28/src/fuzzy.ts#L12)*
+*Defined in [fuzzy.ts:14](https://github.com/Wimjiang/utility/blob/87b2a56/src/fuzzy.ts#L14)*
+
+递归 搜索
 
 **Type parameters:**
 
@@ -99,13 +79,14 @@ ___
 
 **Parameters:**
 
-Name | Type |
------- | ------ |
-`searchs` | string[] |
-`key` | number |
-`parents` | T[] |
-`selects` | T[K][] |
-`id` | K |
+Name | Type | Description |
+------ | ------ | ------ |
+`searchValues` | string[] | text array 搜索值 |
+`idx` | number | 递归次数 |
+`parents` | T[] | - |
+`selects` | T[K][] | - |
+`key` | K | - |
+`keys?` | K[] |   |
 
 **Returns:** *void*
 
@@ -115,7 +96,7 @@ ___
 
 ▸ **sortBy**<**T**, **K**>(`params`: T[], `dimensions`: T[K][], `key`: K): *T[]*
 
-*Defined in [fuzzy.ts:49](https://github.com/Wimjiang/utility/blob/fefcd28/src/fuzzy.ts#L49)*
+*Defined in [fuzzy.ts:50](https://github.com/Wimjiang/utility/blob/87b2a56/src/fuzzy.ts#L50)*
 
 **Type parameters:**
 
