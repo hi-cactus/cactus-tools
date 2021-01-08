@@ -100,23 +100,20 @@ export default function fuzzy<T extends object>(
 
     if (nextText.length === 0) return parents;
 
-    const { keys, key } = options;
+    const { keys, key, splitType } = options;
+    
     // 按照范围keys 得到新 parents
-    let nextParents: { [P in keyof T]: T[P] }[] | [] = [];
-    if (isArray(keys)) {
-        nextParents = parents.map((item) =>
-            pick<T, keyof T>(item, keys.concat(key))
-        );
-    } else nextParents = parents;
-
-    const selects: any[] = [];
+    const nextParents = isArray(keys)
+      ? parents.map((item) => pick<T, keyof T>(item, keys.concat(key)))
+      : parents;
 
     // 根据splitType 的值分为多个字段数字
-    const { splitType } = options;
     const keyWords = Array.from(new Set(nextText.split(splitType || ';')))
         .filter((o) => o.trim().length > 0)
         .map((o) => o.trim());
 
+    const selects: any[] = [];
+    
     search<{ [P in keyof T]: T[P] }, keyof T>(
         keyWords,
         0,
