@@ -17,7 +17,7 @@
 
 ▸ **vals**(`parent`: object, `index`: number, `value`: any[]): *void*
 
-*Defined in [valuesDeep.ts:33](https://github.com/Wimjiang/utility/blob/87b2a56/src/valuesDeep.ts#L33)*
+*Defined in [valuesDeep.ts:33](https://github.com/Wimjiang/utility/blob/cb35816/src/valuesDeep.ts#L33)*
 
 **Parameters:**
 
@@ -35,7 +35,7 @@ ___
 
 ▸ **valuesDeep**(`value`: any[] | object): *any[]*
 
-*Defined in [valuesDeep.ts:15](https://github.com/Wimjiang/utility/blob/87b2a56/src/valuesDeep.ts#L15)*
+*Defined in [valuesDeep.ts:15](https://github.com/Wimjiang/utility/blob/cb35816/src/valuesDeep.ts#L15)*
 
 获取对象的 value
 

@@ -18,7 +18,7 @@
 
 ▸ **fuzzy**<**T**>(`text`: string, `parents`: T[], `options`: object): *Pick‹T, keyof T›[]*
 
-*Defined in [fuzzy.ts:87](https://github.com/Wimjiang/utility/blob/87b2a56/src/fuzzy.ts#L87)*
+*Defined in [fuzzy.ts:87](https://github.com/Wimjiang/utility/blob/cb35816/src/fuzzy.ts#L87)*
 
 模糊搜索
 
@@ -67,7 +67,7 @@ ___
 
 ▸ **search**<**T**, **K**>(`searchValues`: string[], `idx`: number, `parents`: T[], `selects`: T[K][], `key`: K, `keys?`: K[]): *void*
 
-*Defined in [fuzzy.ts:14](https://github.com/Wimjiang/utility/blob/87b2a56/src/fuzzy.ts#L14)*
+*Defined in [fuzzy.ts:14](https://github.com/Wimjiang/utility/blob/cb35816/src/fuzzy.ts#L14)*
 
 递归 搜索
 
@@ -96,7 +96,7 @@ ___
 
 ▸ **sortBy**<**T**, **K**>(`params`: T[], `dimensions`: T[K][], `key`: K): *T[]*
 
-*Defined in [fuzzy.ts:50](https://github.com/Wimjiang/utility/blob/87b2a56/src/fuzzy.ts#L50)*
+*Defined in [fuzzy.ts:50](https://github.com/Wimjiang/utility/blob/cb35816/src/fuzzy.ts#L50)*
 
 **Type parameters:**
 

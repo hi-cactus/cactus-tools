@@ -17,7 +17,7 @@
 
 ▸ **pickBy**(`parent`: object, `predicate`: function): *object*
 
-*Defined in [pickBy.ts:9](https://github.com/Wimjiang/utility/blob/87b2a56/src/pickBy.ts#L9)*
+*Defined in [pickBy.ts:9](https://github.com/Wimjiang/utility/blob/cb35816/src/pickBy.ts#L9)*
 
 **`export`** 
 
@@ -37,7 +37,7 @@ ___
 
 ▸ **vals**(`parent`: object, `predicate`: function, `index`: number, `value`: object): *void*
 
-*Defined in [pickBy.ts:18](https://github.com/Wimjiang/utility/blob/87b2a56/src/pickBy.ts#L18)*
+*Defined in [pickBy.ts:18](https://github.com/Wimjiang/utility/blob/cb35816/src/pickBy.ts#L18)*
 
 **Parameters:**
 

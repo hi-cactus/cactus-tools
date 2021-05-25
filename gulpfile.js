@@ -8,10 +8,7 @@ function lib() {
     return tsProject
         .src()
         .pipe(tsProject())
-        .pipe(dest('./'));
-}
-function move_lib_d_ts() {
-    return src('./lib/*.d.ts').pipe(dest('./'));
+        .pipe(dest('./lib'));
 }
 
-exports.default = series(parallel(lib, move_lib_d_ts));
+exports.default = series(parallel(lib));

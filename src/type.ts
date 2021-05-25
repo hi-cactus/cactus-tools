@@ -30,11 +30,11 @@ enum TYPE_MSG {
  *
  *
  */
-export default function getType(value: any): string {
+export function getType(value: any): keyof TYPE_MSG {
     return Object.prototype.toString
         .call(value)
         .replace(/(\[)(\w* )(\w*)(\])/, '$3')
-        .toLowerCase();
+        .toLowerCase() as keyof TYPE_MSG;
 }
 
 const toString = Object.prototype.toString;

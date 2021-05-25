@@ -1,6 +1,6 @@
 import pick from './pick';
 import fuzzy from './fuzzy';
-import getType, {
+import {
     isArray,
     isBoolean,
     isFunction,
@@ -16,7 +16,6 @@ import valuesDeep from './valuesDeep';
 const tools = {
     pick,
     fuzzy,
-    getType,
     isArray,
     isBoolean,
     isFunction,
@@ -33,7 +32,6 @@ export default tools;
 export {
     pick,
     fuzzy,
-    getType,
     isArray,
     isBoolean,
     isFunction,
