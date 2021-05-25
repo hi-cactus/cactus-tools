@@ -24,6 +24,9 @@ export default function pick<T extends {}, K extends keyof T>(
     return value;
 }
 
+/**
+ * @ignore
+ */
 function vals<T extends object, K extends keyof T>(
     parent: T,
     props: K[],

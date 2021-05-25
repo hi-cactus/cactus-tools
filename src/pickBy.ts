@@ -15,6 +15,9 @@ export default function pickBy(
     return value;
 }
 
+/**
+ * @ignore
+ */
 function vals(
     parent: object,
     predicate: () => boolean,

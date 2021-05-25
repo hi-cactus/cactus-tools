@@ -14,7 +14,7 @@ enum TYPE_MSG {
 
 /**
  * Get the type of value
- *
+ * @ignore
  * @since 0.0.1
  * @category Lang
  * @param {*} value

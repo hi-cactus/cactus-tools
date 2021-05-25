@@ -4,6 +4,8 @@ import valuesDeep from './valuesDeep';
 
 /**
  * 递归 搜索
+ * @ignore
+ *
  * @param searchValues {String[]} text array 搜索值
  * @param idx 递归次数
  * @param parents
@@ -40,13 +42,14 @@ function search<T extends object, K extends keyof T>(
 
     search(searchValues, idx + 1, next, selects, key, keys);
 }
-//
-// 按照 数组顺序排序
-//
-// @param {*} params
-// @param {string|number[]} dimensions params
-// @param {string} key
-//
+/** 
+ * 按照 数组顺序排序
+ * @ignore
+ * 
+ * @param {*} params
+ * @param {string|number[]} dimensions params
+ * @param {string} key
+ */
 function sortBy<T extends object, K extends keyof T>(
     params: T[],
     dimensions: T[K][],
@@ -101,11 +104,11 @@ export default function fuzzy<T extends object>(
     if (nextText.length === 0) return parents;
 
     const { keys, key, splitType } = options;
-    
+
     // 按照范围keys 得到新 parents
     const nextParents = isArray(keys)
-      ? parents.map((item) => pick<T, keyof T>(item, keys.concat(key)))
-      : parents;
+        ? parents.map((item) => pick<T, keyof T>(item, keys.concat(key)))
+        : parents;
 
     // 根据splitType 的值分为多个字段数字
     const keyWords = Array.from(new Set(nextText.split(splitType || ';')))
@@ -113,7 +116,7 @@ export default function fuzzy<T extends object>(
         .map((o) => o.trim());
 
     const selects: any[] = [];
-    
+
     search<{ [P in keyof T]: T[P] }, keyof T>(
         keyWords,
         0,

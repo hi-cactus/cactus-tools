@@ -9,8 +9,6 @@
 ### Functions
 
 * [fuzzy](_fuzzy_.md#fuzzy)
-* [search](_fuzzy_.md#search)
-* [sortBy](_fuzzy_.md#sortby)
 
 ## Functions
 
@@ -18,7 +16,7 @@
 
 ▸ **fuzzy**<**T**>(`text`: string, `parents`: T[], `options`: object): *Pick‹T, keyof T›[]*
 
-*Defined in [fuzzy.ts:87](https://github.com/Wimjiang/utility/blob/cb35816/src/fuzzy.ts#L87)*
+*Defined in [fuzzy.ts:90](https://github.com/Wimjiang/utility/blob/86b87bc/src/fuzzy.ts#L90)*
 
 模糊搜索
 
@@ -60,56 +58,3 @@ Name | Type |
 `splitType?` | undefined \| string |
 
 **Returns:** *Pick‹T, keyof T›[]*
-
-___
-
-###  search
-
-▸ **search**<**T**, **K**>(`searchValues`: string[], `idx`: number, `parents`: T[], `selects`: T[K][], `key`: K, `keys?`: K[]): *void*
-
-*Defined in [fuzzy.ts:14](https://github.com/Wimjiang/utility/blob/cb35816/src/fuzzy.ts#L14)*
-
-递归 搜索
-
-**Type parameters:**
-
-▪ **T**: *object*
-
-▪ **K**: *keyof T*
-
-**Parameters:**
-
-Name | Type | Description |
------- | ------ | ------ |
-`searchValues` | string[] | text array 搜索值 |
-`idx` | number | 递归次数 |
-`parents` | T[] | - |
-`selects` | T[K][] | - |
-`key` | K | - |
-`keys?` | K[] |   |
-
-**Returns:** *void*
-
-___
-
-###  sortBy
-
-▸ **sortBy**<**T**, **K**>(`params`: T[], `dimensions`: T[K][], `key`: K): *T[]*
-
-*Defined in [fuzzy.ts:50](https://github.com/Wimjiang/utility/blob/cb35816/src/fuzzy.ts#L50)*
-
-**Type parameters:**
-
-▪ **T**: *object*
-
-▪ **K**: *keyof T*
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`params` | T[] |
-`dimensions` | T[K][] |
-`key` | K |
-
-**Returns:** *T[]*
