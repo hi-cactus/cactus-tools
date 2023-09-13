@@ -1,0 +1,27 @@
+{
+  "name": "@cactus/tools",
+  "version": "1.0.0",
+  "description": "javascript tools",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "docs",
+    "LICENSE"
+  ],
+  "scripts": {
+    "tsc": "tsc",
+    "docs": "typedoc --theme markdown --out docs/ src/",
+    "release": "npm run tsc && npm run docs",
+    "test": "jest test"
+  },
+  "keywords": [
+    "javascript",
+    "typescript",
+    "tools",
+    "tree",
+    "fuzzy"
+  ]
+}

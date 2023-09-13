@@ -5,10 +5,9 @@
 
 # production
 /build
-/dist
+/**/dist
 /lib
 *.js
-*.d.ts
 
 # misc
 .DS_Store

@@ -1,0 +1,46 @@
+{
+  "name": "@cactus/orval",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": "false",
+  "bin": {
+    "orval": "dist/orval.js"
+  },
+  "scripts": {
+    "build": "tsup ./bin/orval.ts --target node12 --minify --clean --dts --splitting"
+  },
+  "devDependencies": {
+    "@types/debug": "^4.1.8",
+    "@types/esutils": "^2.0.0",
+    "@types/js-yaml": "^4.0.5",
+    "@types/micromatch": "^4.0.2",
+    "@types/validator": "^13.11.1"
+  },
+  "dependencies": {
+    "@apidevtools/swagger-parser": "^10.1.0",
+    "chokidar": "^3.5.3",
+    "compare-versions": "^6.1.0",
+    "cuid": "^3.0.0",
+    "debug": "^4.3.4",
+    "enquirer": "^2.4.1",
+    "esutils": "^2.0.3",
+    "execa": "5.0.0",
+    "find-up": "5.0.0",
+    "globby": "11.1.0",
+    "ibm-openapi-validator": "0.97.3",
+    "js-yaml": "^4.1.0",
+    "micromatch": "^4.0.5",
+    "openapi3-ts": "3.0.0",
+    "string-argv": "^0.3.2",
+    "swagger2openapi": "^7.0.8",
+    "tsconfck": "^2.1.2",
+    "tsup": "^7.2.0",
+    "validator": "^13.11.0",
+    "vitest": "^0.34.4"
+  },
+  "peerDependencies": {},
+  "engines": {
+    "node": ">12"
+  }
+}

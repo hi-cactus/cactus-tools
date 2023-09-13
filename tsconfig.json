@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "module": "commonjs",
+    "target": "ESNext",
+    "module": "ESNext",
     "lib": ["dom", "dom.iterable", "esnext"],
     "outDir": "./dist/",
     "skipLibCheck": true,
@@ -16,7 +16,15 @@
     "emitDecoratorMetadata": true,
     "declaration": true,
     "baseUrl": "",
-    "sourceMap": true
+    "sourceMap": false
   },
-  "include": ["src"]
+
+  "ts-node": {
+    "allowJs": true,
+    "module": "CommonJS",
+    "types": ["node"],
+    "lib": ["node"],
+    "experimentalSpecifierResolution": "node",
+    "esm": true
+  }
 }
