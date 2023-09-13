@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import { generateConfig } from '../generate';
 
 generateConfig('./orval.config.js', {

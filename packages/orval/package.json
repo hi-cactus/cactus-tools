@@ -19,6 +19,8 @@
   },
   "dependencies": {
     "@apidevtools/swagger-parser": "^10.1.0",
+    "acorn": "^8.8.0",
+    "ajv": "^8.11.2",
     "chokidar": "^3.5.3",
     "compare-versions": "^6.1.0",
     "cuid": "^3.0.0",

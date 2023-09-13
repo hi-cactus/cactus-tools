@@ -2,12 +2,15 @@
 
 # dependencies
 /node_modules
+/packages/**/node_modules
 
 # production
 /build
-/**/dist
+/dist
 /lib
-*.js
+/packages/**/dist
+/packages/**/lib
+/packages/**/build
 
 # misc
 .DS_Store
